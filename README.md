@@ -1,4 +1,4 @@
-# Zennco v3 - WhatsApp Bot Base
+# Zyenxo v3 - WhatsApp Bot Base
 
 **Zennco v3** adalah base bot WhatsApp yang ringan, modular, dan open-source. Cocok untuk pengembang yang ingin membuat bot WhatsApp sendiri dari nol dengan fleksibilitas tinggi.
 
@@ -61,7 +61,7 @@ npm start
 
 Edit file `system/config.js` untuk mengatur:
 - Nomor owner
-- prefix, msg
+- prefix, msg, pairing
 
 ---
 
@@ -92,4 +92,4 @@ case 'halo':
 
 ## License
 
-MIT License © 2025 Zennco Team
+MIT License © 2025 Kagenou-DG
