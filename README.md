@@ -41,7 +41,7 @@ Zennco/
 
 1. Clone repository:
 ```bash
-git clone https://github.com/kagenouReal/Zennco.git
+git clone https://github.com/kagenouReal/Zennco-wa.git
 cd Zennco
 ```
 
