@@ -1,5 +1,5 @@
 //======KAGENOU========//
-const { extractMessageContent, getDevice, jidNormalizedUser, proto, delay, getContentType, areJidsSameUser, generateWAMessage } = require("@kagenoureal/baileys")
+const { extractMessageContent, getDevice, jidNormalizedUser, proto, delay, getContentType, areJidsSameUser, generateWAMessage } = require("@kagenoureal/zbail")
 //=====================//
 exports.smsg = (conn, m, store) => {
 if (!m) return m
