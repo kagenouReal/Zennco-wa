@@ -1,11 +1,10 @@
 require('./system/config');
-const { default: makeWASocket, useMultiFileAuthState, DisconnectReason, makeInMemoryStore, jidDecode } = require("@kagenoureal/baileys");
+const { default: makeWASocket, useMultiFileAuthState, DisconnectReason, makeInMemoryStore, jidDecode } = require("@kagenoureal/zbail");
 const pino = require('pino');
 const { Boom } = require('@hapi/boom');
 const readline = require("readline");
 const { smsg } = require('./system/lib/myfunction');
 //============
-const store = makeInMemoryStore({ logger: pino().child({ level: 'silent', stream: 'store' }) });
 const question = (text) => new Promise(res => {
 const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
 rl.question(text, ans => { rl.close(); res(ans) });
@@ -41,8 +40,8 @@ zyn.ev.on("messages.upsert", async ({ messages, type }) => {
 try {
 const msg = messages[0] || messages[messages.length - 1];
 if (type !== "notify" || !msg?.message || msg.key?.remoteJid == "status@broadcast") return;
-const m = smsg(zyn, msg, store);
-require('./system/whatsapp')(zyn, m, msg, store);
+const m = smsg(zyn, msg);
+require('./system/whatsapp')(zyn, m, msg);
 } catch (e) {
 console.log(e);
 }});
@@ -54,12 +53,6 @@ const decode = jidDecode(jid) || {};
 return decode.user && decode.server ? decode.user + '@' + decode.server : jid}
 return jid;
 };
-//============
-zyn.ev.on('contacts.update', updates => {
-for (const c of updates) {
-const id = zyn.decodeJid(c.id);
-if (store?.contacts) store.contacts[id] = { id, name: c.notify };
-}});
 //============
 zyn.sendText = (jid, text, quoted = '', opts = {}) => zyn.sendMessage(jid, { text, ...opts }, { quoted });
 zyn.ev.on('creds.update', saveCreds);
