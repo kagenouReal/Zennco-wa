@@ -43,7 +43,7 @@ Zennco/
 1. Clone the repository:
 ```bash
 git clone https://github.com/kagenouReal/Zennco-wa.git
-cd Zennco
+cd Zennco-wa
 ```
 
 2. Install dependencies:
