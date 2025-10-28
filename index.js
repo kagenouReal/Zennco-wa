@@ -46,13 +46,13 @@ require('./system/whatsapp')(zyn, m, msg);
 console.log(e);
 }});
 //============
-zyn.decodeJid = (jid) => {
-if (!jid) return jid;
-if (/:\d+@/gi.test(jid)) {
-const decode = jidDecode(jid) || {};
-return decode.user && decode.server ? decode.user + '@' + decode.server : jid}
-return jid;
-};
+zyn.decodeJid = jid => {
+if (!jid) return jid
+let clean = jid.split(':')[0]
+if (/@s\.whatsapp\.net$|@g\.us$/.test(clean)) return clean
+if (/^\d+$/.test(clean)) return clean + '@s.whatsapp.net'
+return clean
+}
 //============
 zyn.sendText = (jid, text, quoted = '', opts = {}) => zyn.sendMessage(jid, { text, ...opts }, { quoted });
 zyn.ev.on('creds.update', saveCreds);
