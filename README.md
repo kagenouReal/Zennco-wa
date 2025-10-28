@@ -1,45 +1,46 @@
 # Zyenxo v3 - WhatsApp Bot Base
 
-**Zennco v3** adalah base bot WhatsApp yang ringan, modular, dan open-source. Cocok untuk pengembang yang ingin membuat bot WhatsApp sendiri dari nol dengan fleksibilitas tinggi.
+**Zyenxo v3** is a lightweight, modular, and open-source WhatsApp bot base.  
+Perfect for developers who want to build their own WhatsApp bot from scratch with full flexibility.
 
 ---
 
-## ✨ Fitur Utama
+## ✨ Main Features
 
-- Struktur folder rapi dan mudah dikembangkan
-- Sistem command modular (`whatsapp.js`)
-- Manajemen user premium (`premium.json`)
-- Sistem konfigurasi global (`config.js`)
-- Dibangun menggunakan Baileys WhatsApp Web API
-- Ringan dan cocok untuk server kecil sekalipun
-- Custom function & handler (`myfunction.js`)
+- Clean and well-organized folder structure  
+- Modular command system (`whatsapp.js`)  
+- Premium user management (`premium.json`)  
+- Global configuration system (`config.js`)  
+- Built using the Baileys WhatsApp Web API  
+- Lightweight and optimized for small servers  
+- Custom functions & handlers (`myfunction.js`)
 
 ---
 
-## 🧾 Struktur Folder
+## 🧾 Folder Structure
 
 ```bash
 Zennco/
-├── system/                  # Folder utama sistem
-│   ├── whatsapp.js          # Tempat semua command WhatsApp
-│   ├── config.js            # File konfigurasi (nomor owner, prefix, dll)
+├── system/                  # Main system folder
+│   ├── whatsapp.js          # All WhatsApp commands go here
+│   ├── config.js            # Configuration file (owner number, prefix, etc.)
 │
-├── system/lib/             # Library custom function
-│   ├── myfunction.js        # Berisi fungsi-fungsi custom
-│   ├── premium.js           # Loader database premium
+├── system/lib/              # Custom library functions
+│   ├── myfunction.js        # Contains custom utility functions
+│   ├── premium.js           # Premium database loader
 │
-├── system/database/        # Database lokal
-│   └── premium.json         # Penyimpanan data user premium
+├── system/database/         # Local databases
+│   └── premium.json         # Stores premium user data
 │
-├── package.json            # Metadata dan dependencies project
-├── index.js                # Entry point utama bot
+├── package.json             # Project metadata and dependencies
+├── index.js                 # Main entry point of the bot
 ```
 
 ---
 
-## ⚙️ Instalasi
+## ⚙️ Installation
 
-1. Clone repository:
+1. Clone the repository:
 ```bash
 git clone https://github.com/kagenouReal/Zennco-wa.git
 cd Zennco
@@ -50,28 +51,28 @@ cd Zennco
 npm install
 ```
 
-3. Jalankan bot:
+3. Run the bot:
 ```bash
 npm start
 ```
 
 ---
 
-## 🛠 Konfigurasi
+## 🛠 Configuration
 
-Edit file `system/config.js` untuk mengatur:
-- Nomor owner
-- prefix, msg, pairing
+Edit the `system/config.js` file to configure:
+- Owner number
+- Prefix, message, and pairing settings
 
 ---
 
-## ☕ Contoh Penambahan Command
+## ☕ Example Command
 
-Di file `system/whatsapp.js`, kamu bisa menambahkan command seperti berikut:
+In `system/whatsapp.js`, you can add a command like this:
 
 ```js
-case 'halo':
-  m.reply(m.chat, 'Halo, ini Zennco v3');
+case 'hello':
+  m.reply(m.chat, 'Hello, this is Zyenxo v3!');
   break;
 ```
 
@@ -79,17 +80,17 @@ case 'halo':
 
 ## 🔐 Premium System
 
-- Premium user disimpan di `system/database/premium.json`
-- Digunakan oleh handler `premium.js` untuk validasi akses fitur tertentu
+- Premium users are stored in `system/database/premium.json`  
+- Handled by `premium.js` for feature access validation
 
 ---
 
 ## ❤️ Credits
 
-> Zennco v3 dikembangkan oleh [Kagenou](https://github.com/kagenouReal) sebagai base awal WhatsApp bot open-source yang powerful namun tetap simpel.
+> Zyenxo v3 is developed by [Kagenou](https://github.com/kagenouReal) as a powerful yet simple open-source WhatsApp bot base.
 
 ---
 
-## License
+## 📜 License
 
 MIT License © 2025 Kagenou-DG
